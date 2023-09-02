@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background: #050505;
+}
+.pyramid
+{
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    transform-style: preserve-3d;
+    animation: animate 8s linear infinite; 
+}
+@keyframes animate
+{
+    0%
+    {
+        transform: rotateX(-25deg) rotateY(0deg);
+    }
+    100%
+    {
+        transform: rotateX(-25deg) rotateY(360deg);
+    }
+} 
+.pyramid div
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+.pyramid div span
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#151515,#ec0099);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform: rotateY(calc(90deg * var(--i))) translateZ(249px) rotateX(30deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transform-origin: bottom;
+}
+.pyramid .glow
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #760682;
+    transform: rotateX(90deg) translateZ(-300px);
+    filter: blur(20px);
+    box-shadow: 0 0 100px rgba(255, 0, 200, 0.1),
+    0 0 200px rgba(255, 0, 204, 0.2),
+    0 0 300px rgba(255, 0, 187, 0.3),
+    0 0 400px rgba(188, 9, 131, 0.801),
+    0 0 500px rgb(255, 0, 157);
+}
